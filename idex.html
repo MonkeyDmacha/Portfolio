@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DarkPixel 2.0</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Orbitron Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Poppins Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+</head>
+<body class="bg-[#0a0f1c] text-white relative overflow-x-hidden">
+
+  <!-- Glowing Background Blur Effects -->
+<div class="absolute -top-40 -left-40 w-[400px] h-[400px] bg-blue-500 blur-3xl opacity-30 rounded-full z-0"></div>
+<div class="absolute bottom-0 right-0 w-[300px] h-[300px] bg-purple-500 blur-2xl opacity-20 rounded-full z-0"></div>
+
+
+<nav class="w-full px-6 py-4 bg-transparent z-50 fixed top-0 backdrop-blur-sm" style="font-family: 'Poppins', sans-serif;">
+  <div class="flex justify-between items-center md:justify-between">
+    <!-- Toggle Icon (left for mobile only) -->
+    <div class="text-white text-2xl md:hidden cursor-pointer" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Home (right aligned on mobile) -->
+    <div class="text-white text-xl font-semibold hover:text-blue-400 transform transition duration-300 hover:-translate-y-1 ml-auto md:ml-0">
+      <a href="#hero">Home</a>
+    </div>
+
+    <!-- Nav Items (desktop only) -->
+    <ul id="nav-links" class="hidden md:flex space-x-10 text-lg font-semibold text-white transition-all duration-300 ml-auto">
+      <li class="relative group hover:text-blue-400 transform hover:-translate-y-1 transition">
+        <a href="#about">About</a>
+        <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+      </li>
+      <li class="relative group hover:text-blue-400 transform hover:-translate-y-1 transition">
+        <a href="#projects">Projects</a>
+        <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+      </li>
+      <li class="relative group hover:text-blue-400 transform hover:-translate-y-1 transition">
+        <a href="#contact">Contact</a>
+        <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- Mobile Nav Menu (Initially Hidden) -->
+<div id="mobile-nav" class="md:hidden hidden fixed top-0 left-0 w-full h-screen bg-black bg-opacity-70 backdrop-blur-md flex flex-col items-center justify-center space-y-8 z-40 text-white text-xl font-semibold" style="font-family: 'Poppins', sans-serif;">
+  <a href="#about" class="hover:text-blue-400" onclick="toggleMenu()">About</a>
+  <a href="#projects" class="hover:text-blue-400" onclick="toggleMenu()">Projects</a>
+  <a href="#contact" class="hover:text-blue-400" onclick="toggleMenu()">Contact</a>
+</div>
+
+
+
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-4" id="hero">
+    <div class="flex justify-center items-center space-x-2 text-5xl md:text-6xl font-bold">
+        <span id="im-text" class="text-blue-300 opacity-0">I'm</span>
+        <span id="nikhil-text" class="text-white opacity-0">Nikhil</span>
+    </div>
+
+    <p id="title-text" class="mt-4 text-lg text-gray-300 opacity-0">
+        A Web Developer with a shady style 💻👾
+    </p>
+
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-24 px-6 md:px-16 bg-[#0a0f1c] text-white">
+  <h2 class="text-4xl font-bold text-blue-400 mb-16 text-center">About Me</h2>
+
+  <div class="flex flex-col md:flex-row gap-12 items-start">
+    
+    <!-- Left Side: About -->
+    <div class="md:w-1/2 space-y-5">
+      <p class="text-gray-300 text-lg leading-relaxed">
+        Hey 👋 I'm <span class="text-blue-400 font-semibold">Nikhil</span> a.k.a <span class="text-blue-400">Dark Pixel</span> —  
+        a developer who vibes with clean UIs, scroll-powered animations, and dark-themed creations.  
+        I turn ideas into sleek, functional apps using Python, Flask, and JavaScript.  
+        Every line of code? Styled with precision and purpose.
+      </p>
+      <p class="text-sm text-gray-500 italic">“I don’t just build websites. I craft experiences.”</p>
+    </div>
+
+    <!-- Right Side: Skills -->
+    <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+      
+      <!-- Skill Items -->
+      <div class="skill-card group transition-all duration-300 translate-x-16 opacity-0" style="transition-delay: 100ms;">
+        <h4 class="text-blue-300 font-semibold mb-1">Python</h4>
+        <div class="skill-bar w-full bg-transparent h-2 overflow-hidden opacity-0 group-hover:opacity-100">
+          <div class="h-2 bg-blue-400 w-0 transition-all duration-700 ease-out group-hover:w-[85%]"></div>
+        </div>
+      </div>
+
+      <div class="skill-card group transition-all duration-300 translate-x-16 opacity-0" style="transition-delay: 200ms;">
+        <h4 class="text-yellow-300 font-semibold mb-1">JavaScript</h4>
+        <div class="skill-bar w-full bg-transparent h-2 overflow-hidden opacity-0 group-hover:opacity-100">
+          <div class="h-2 bg-yellow-400 w-0 transition-all duration-700 ease-out group-hover:w-[75%]"></div>
+        </div>
+      </div>
+
+      <div class="skill-card group transition-all duration-300 translate-x-16 opacity-0" style="transition-delay: 300ms;">
+        <h4 class="text-green-300 font-semibold mb-1">Flask</h4>
+        <div class="skill-bar w-full bg-transparent h-2 overflow-hidden opacity-0 group-hover:opacity-100">
+          <div class="h-2 bg-green-400 w-0 transition-all duration-700 ease-out group-hover:w-[90%]"></div>
+        </div>
+      </div>
+
+      <div class="skill-card group transition-all duration-300 translate-x-16 opacity-0" style="transition-delay: 400ms;">
+        <h4 class="text-cyan-300 font-semibold mb-1">Tailwind CSS</h4>
+        <div class="skill-bar w-full bg-transparent h-2 overflow-hidden opacity-0 group-hover:opacity-100">
+          <div class="h-2 bg-cyan-400 w-0 transition-all duration-700 ease-out group-hover:w-[70%]"></div>
+        </div>
+      </div>
+
+      <div class="skill-card group transition-all duration-300 translate-x-16 opacity-0" style="transition-delay: 500ms;">
+        <h4 class="text-purple-300 font-semibold mb-1">SQL</h4>
+        <div class="skill-bar w-full bg-transparent h-2 overflow-hidden opacity-0 group-hover:opacity-100">
+          <div class="h-2 bg-purple-400 w-0 transition-all duration-700 ease-out group-hover:w-[65%]"></div>
+        </div>
+      </div>
+
+      <div class="skill-card group transition-all duration-300 translate-x-16 opacity-0" style="transition-delay: 600ms;">
+        <h4 class="text-red-300 font-semibold mb-1">Git</h4>
+        <div class="skill-bar w-full bg-transparent h-2 overflow-hidden opacity-0 group-hover:opacity-100">
+          <div class="h-2 bg-red-400 w-0 transition-all duration-700 ease-out group-hover:w-[80%]"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <section id="projects" class="py-20 px-6 md:px-16 bg-[#0a0f1c] text-white">
+  <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">Projects</h2>
+
+  <!-- Project 1 -->
+  <div class="flex flex-col md:flex-row items-center mb-20" data-aos="fade-right">
+    <img src="assets/images/project1.png" alt="Project 1" class="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8 rounded-lg">
+    <div class="text-left">
+      <h3 class="text-2xl font-semibold mb-2">Weather Forecast App</h3>
+      <p class="text-gray-300 mb-3">A web app using Flask and OpenWeather API to display real-time weather updates by city.</p>
+      <a href="https://wtf-weather-app.onrender.com" target="_blank" class="text-blue-400 hover:underline">Launch Project</a>
+    </div>
+  </div>
+
+  <!-- Project 2 -->
+  <div class="flex flex-col md:flex-row-reverse items-center mb-20" data-aos="fade-left">
+    <img src="assets/images/project2.png" alt="Project 2" class="w-full md:w-1/2 mb-6 md:mb-0 md:ml-8 rounded-lg">
+    <div class="text-left">
+      <h3 class="text-2xl font-semibold mb-2">NOTEdownLIST</h3>
+      <p class="text-gray-300 mb-3">"Designed with a personal twist to boost daily productivity and note-taking—all in one app. Built with minimalism and fun in mind."</p>
+      <a href="https://notedownlist.onrender.com" target="_blank" class="text-blue-400 hover:underline">Launch Project</a>
+    </div>
+  </div>
+
+  
+
+
+<section id="contact">
+  <h2>Let's Connect</h2>
+  <p>You can reach me directly via:</p>
+  <div class="contact-icons">
+    <a href="mailto:nikhilrehman2552@gmail.com" target="_blank" title="Send Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://github.com/MonkeyDmacha" target="_blank" title="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/nikhil-rahman/" target="_blank" title="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </div>
+</section>
+
+
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const el = entry.target;
+          if (entry.isIntersecting) {
+            el.classList.add("visible");
+          } else {
+            el.classList.remove("visible");
+          }
+        });
+      },
+      {
+        threshold: 0.4,
+      }
+    );
+
+    document.querySelectorAll(".project").forEach((proj) => {
+      observer.observe(proj);
+    });
+  });
+</script>
+<script>
+  const skillCards = document.querySelectorAll('.skill-card');
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target); // trigger only once per element
+      }
+    });
+  }, { threshold: 0.4 });
+
+  skillCards.forEach(card => observer.observe(card));
+
+  // Check manually when nav link is clicked
+  function triggerSkillVisibilityCheck() {
+    skillCards.forEach((card) => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        card.classList.add('visible');
+      }
+    });
+  }
+
+  // Listen to clicks on #about nav links
+  document.querySelectorAll('a[href="#about"]').forEach(link => {
+    link.addEventListener('click', () => {
+      setTimeout(triggerSkillVisibilityCheck, 300); // give time to scroll
+    });
+  });
+
+  // In case user loads page directly on #about
+  window.addEventListener('load', () => {
+    triggerSkillVisibilityCheck();
+  });
+</script>
+
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  function toggleMenu() {
+    mobileNav.classList.toggle('hidden');
+  }
+
+  menuToggle.addEventListener('click', toggleMenu);
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // animation speed in ms
+    once: true      // animate only once per scroll
+  });
+</script>
+
+
+</body>
+</html>
